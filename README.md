@@ -1,3 +1,3 @@
 # LearningExtJS
-Studies on 'Learning Ext JS - 4th Edition'
+Studies on 'Learning Ext JS - 4th Edition'<br>
 Please check out branches for last commits...
