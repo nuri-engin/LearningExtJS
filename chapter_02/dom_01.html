@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM 01</title>
+    <link rel="stylesheet" href="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+    <script src="../../SDK/ext-5.1.1/build/ext-all.js"></script>
+    <script src="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/ext-theme-neptune.js"></script>
+
+    <script type="text/javascript">
+      Ext.onReady(function () {
+        var mymainDiv = Ext.get('main');
+        var mysecondDiv = Ext.dom.Element.get('second');
+
+        mymainDiv.setStyle({
+          width: "100px",
+          height: "100px",
+          border: "2px solid #444",
+          margin: "80px auto",
+          backgroundColor: "#ccc"
+        });
+        mymainDiv.fadeOut({
+          opacity: .25,
+          duration: 1000
+        });
+
+        mysecondDiv.setStyle({
+          width: "200px",
+          height: "100px",
+          border: "1px solid #C3c3c3",
+          margin: "100px auto",
+          backgroundColor: "#f1f1f1"
+        });
+        mysecondDiv.fadeIn({
+          opacity: .25,
+          easing: 'easeOut',
+          duration: 6000
+        })
+
+      });
+    </script>
+  </head>
+  <body style="padding: 10px;">
+    <div id="main"></div>
+    <div id="second"></div>
+  </body>
+</html>

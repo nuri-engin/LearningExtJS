@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM Manipulation</title>
+    <script src="../../SDK/ext-5.1.1/build/ext-all.js"></script>
+
+    <script type="text/javascript">
+      Ext.onReady(function () {
+        Ext.DomHelper.append(Ext.getBody(), {
+          tag: "div",
+          style: {
+            width: "100px",
+            height: "100px",
+            border: "2px solid #333",
+            margin: "20px auto"
+          },
+          children: [{
+            tag: "ul",
+            children: [
+              {tag: "li", html: "Item 1"},
+              {tag: "li", html: "Item 2"}
+            ]
+          }]
+        });
+
+        // The second way to create a Node
+        var h1 = Ext.DomHelper.createDom ({
+          tag: "h1",
+          html: "This is the title"
+        });
+        Ext.getBody().appendChild(h1);
+
+        var p = Ext.DomHelper.createDom({
+          tag: "p",
+          html: "This paragraf will remove later on..."
+        });
+        Ext.getBody().appendChild(p);
+
+        // This code will remove the "p"
+        Ext.fly(p).remove();
+      });
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

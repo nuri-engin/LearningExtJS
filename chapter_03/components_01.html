@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Component 1</title>
+    <link rel="stylesheet" href="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+    <script src="../../SDK/ext-5.1.1/build/ext-all.js"></script>
+    <script src="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/ext-theme-neptune.js"></script>
+
+    <script type="text/javascript">
+    Ext.onReady(function () {
+      var panel = Ext.create('Ext.panel.Panel', {
+        title: "My First Panel",
+        width: 400,
+        height: 250,
+        //renderTo: Ext.getBody()
+      });
+      //Render to a DIV
+      panel.render("first")
+
+      var myCmp = Ext.create('Ext.Component', {
+        width: 300,
+        height: 150,
+        data: {
+          name: "Veronica",
+          lastName: "Sanchez"
+        },
+        tpl: ["<h1>Content</h1><p>Hello {name} {lastName}! </p>"]
+      });
+
+      //Rendering process starts
+      myCmp.render("second");
+
+      //Destroy process starts
+      myCmp.destroy();
+
+      //getting a component by its ID
+      var panel2 = Ext.getCmp("panel-1234");
+      console.log(panel2);
+    });
+    </script>
+  </head>
+  <body style="padding: 50px;">
+    <div id="first"></div>
+    <div id="second"></div>
+
+  </body>
+</html>

@@ -23,6 +23,27 @@ Ext.define('Myapp.sample.tasks.attendPhone', {
       console.log(this.name + ' is answering the phone');
     }
 });
+Ext.define('Myapp.sample.tasks.attendCellPhone', {
+    extend: 'Ext.Mixin',
+    /* answerCellPhone is the attached function for before and after
+   and will execute the method defined in the answerCellPhone
+   property on each configuration object (before / after)
+   */
+   mixinConfig: {
+     before: {
+       answerCellPhone: 'cellPhoneRinging'
+     },
+     after: {
+       answerCellPhone: 'finishCall'
+     }
+   },
+   cellPhoneRinging: function () {
+     console.log('cell phone is ringing you may attend call');
+   },
+   finishCall: function () {
+     console.log('cell phone call is over');
+   }
+});
 Ext.define('Myapp.sample.tasks.attendClient', {
     attendClient: function (clientName) {
       console.log(this.name + ' is attend client: ' + clientName);
@@ -43,14 +64,17 @@ Ext.define('Myapp.sample.tasks.superviseEmployees', {
 Ext.define('Myapp.sample.Secretary', {
     extend: 'Myapp.sample.Employee',
     mixins: {
-      answerPhone: 'Myapp.sample.tasks.attendPhone'
+      answerPhone: 'Myapp.sample.tasks.attendPhone',
+      util: 'Myapp.sample.tasks.attendCellPhone'
     },
     constructor: function (config) {
-      Ext.apply(this, config || {});
+      Ext.apply(this, config || {}); //this.name = config.name;
       console.log('Secretary class created - fullname:' + this.name + ' ' + this.lastName);
+    },
+    answerCellPhone: function () {
+      console.log(this.name + ' is answering the cellphone');
     }
 });
-
 Ext.define('Myapp.sample.Accountant', {
     extend: 'Myapp.sample.Employee',
     mixins: {
@@ -62,7 +86,6 @@ Ext.define('Myapp.sample.Accountant', {
       console.log('Account class created - fullname:' + this.name + ' ' + this.lastName);
     }
 });
-
 Ext.define('Myapp.sample.Manager', {
     extend: 'Myapp.sample.Employee',
     mixins: {
@@ -81,12 +104,13 @@ Ext.define('Myapp.sample.Manager', {
     }
 });
 
-// 3. Usage of 'Task' and 'Occupation' classes
+// 3. Usage of 'Occupation' classes
 var patricia = Ext.create('Myapp.sample.Secretary', {
   name: 'Patricia', lastName: 'Diaz', age: 21
 });
 patricia.work('Attending phone calls');
 patricia.answerPhone();
+patricia.util;
 
 var peter = Ext.create('Myapp.sample.Accountant', {
   name: 'Peter', lastName: 'Jones', age: 44
