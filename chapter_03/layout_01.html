@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Layouts 1</title>
+    <link rel="stylesheet" href="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+    <script src="../../SDK/ext-5.1.1/build/ext-all.js"></script>
+    <script src="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/ext-theme-neptune.js"></script>
+    <script type="text/javascript">
+    Ext.onReady(function () {
+      var panel = Ext.create('Ext.panel.Panel', {
+        width: 500, height: 300,
+        title: 'Border Layout',
+        layout: 'border',
+        items: [{
+          xtype: 'panel',
+          title: 'South Region is resizable',
+          region: 'south',
+          height: 100,
+          split: true //resizable
+        }, {
+          xtype: 'panel',
+          title: 'West',
+          region: 'west',
+          collapsible: true,
+          layout: 'fit',
+          split: true
+        }, {
+          title: 'Center Region',
+          region: 'center',
+          layout: 'fit',
+          margin: '5 5 0 0',
+          html: '<b>Main content</b> goes here'
+        }],
+        renderTo: Ext.getBody()
+        //renderTo: Ext.get('first')
+      //  renderTo: 'first'
+      });
+      //panel.render("first")
+    });
+    </script>
+  </head>
+  <body style="padding: 20px;">
+    <div class="first"></div>
+  </body>
+</html>

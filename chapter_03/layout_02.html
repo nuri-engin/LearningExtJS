@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Layout2</title>
+    <link rel="stylesheet" href="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+    <script src="../../SDK/ext-5.1.1/build/ext-all.js"></script>
+    <script src="../../SDK/ext-5.1.1/build/packages/ext-theme-neptune/build/ext-theme-neptune.js"></script>
+    <script type="text/javascript">
+      Ext.onReady(function () {
+        var win = Ext.create('Ext.window.Window', {
+          title: "Title",
+          width: 300,
+          height: 200,
+          maximizable: true,
+          layout: 'fit',
+          defaults: {
+            xtype: 'panel',
+            height: 60,
+            border: false
+          },
+          items: [
+            {title: 'Menu', html: 'Menu'},
+            {title: 'Content', html: 'content'}
+          ]
+        });
+        win.show('first');
+
+        var win2 = Ext.create('Ext.window.Window', {
+          title: "Title",
+          width: 300,
+          height: 200,
+          maximizable: true,
+          layout: 'accordion',
+          defaults: {
+            xtype: 'panel',
+            height: 60,
+            border: false
+          },
+          items: [
+            {title: 'Menu2', html: 'Menu2'},
+            {title: 'Content', html: 'content'}
+          ]
+        });
+        win2.show('second');
+      });
+    </script>
+  </head>
+  <body>
+    <div class="first"></div>
+    <div class="second"></div>
+
+  </body>
+</html>
