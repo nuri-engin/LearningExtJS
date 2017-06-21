@@ -1,0 +1,58 @@
+{
+  "success": "true",
+  "id": "id",
+  "output": {
+    "customerRecords": [{
+      "id": 102,
+      "name": "Hotech Bilimişim",
+      "phone": "07112233",
+      "website": "hotech.com.tr",
+      "status": "Active",
+      "clientSince": "2017-06-12 10:12",
+      "contractInfo": {
+        "id": 444,
+        "contractId": "htc-0001",
+        "documentType": "PDF"
+        }
+      }, {
+        "id": 102,
+        "name": "Amonra Bilimişim",
+        "phone": "07998844",
+        "website": "amonra.com.tr",
+        "status": "Inactive",
+        "clientSince": "2007-01-13 19:45",
+        "contractInfo": {
+          "id": 111,
+          "contractId": "amn-0001",
+          "documentType": "DOCx"
+        }
+        }]
+  },
+  "records": [
+    {
+      "id": 102,
+      "name": "Hotech Bilimişim",
+      "phone": "07112233",
+      "website": "hotech.com.tr",
+      "status": "Active",
+      "clientSince": "2017-06-12 10:12",
+      "contractInfo": {
+        "id": 444,
+        "contractId": "htc-0001",
+        "documentType": "PDF"
+      }
+    }, {
+      "id": 102,
+      "name": "Amonra Bilimişim",
+      "phone": "07998844",
+      "website": "amonra.com.tr",
+      "status": "Inactive",
+      "clientSince": "2007-01-13 19:45",
+      "contractInfo": {
+        "id": 111,
+        "contractId": "amn-0001",
+        "documentType": "DOCx"
+      }
+    }
+  ]
+}
