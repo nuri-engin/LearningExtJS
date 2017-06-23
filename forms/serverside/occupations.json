@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "id": "id",
+  "records": [
+    {"id": 1, "name": "CEO"},
+    {"id": 2, "name": "Vicepresident"},
+    {"id": 3, "name": "'Marketing Manager'"},
+    {"id": 4, "name": "'Deveopment Manager'"},
+    {"id": 5, "name": "'Sales Manager'"}
+  ]
+}
